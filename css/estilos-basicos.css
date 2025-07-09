@@ -1,0 +1,506 @@
+
+
+/*valores preestablecidos*/
+:root {
+    --light-color: #f8f9fa;
+    --dark-color: #060606;
+    --black-color: #000000;
+    --white-color: #ffffff;
+    /*colores corporativos*/
+    --amarillo-color: #f2b035;
+    --cafe-intermedio: #8c593b;
+    --cafe-claro: #d9bdad;
+    --cafe-oscuro: #261d16;
+    --naranja: #f27f1b;
+
+    #preinicio {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--cafe-claro);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  text-align: center;
+}
+
+/*preinicio estilos*/
+
+#preinicio img {
+  max-width: 200px;
+  margin-bottom: 20px;
+}
+
+.pregunta {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: var(--black-color);
+}
+
+.botones {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.botones button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.boton-si {
+  background-color: var(--amarillo-color);
+  color: black;
+}
+
+.boton-no {
+  background-color: #cccccc;
+  color: black;
+}
+
+.mensaje-no {
+  display: none;
+  font-size: 16px;
+  color: var(--black-color);
+  margin-top: 20px;
+}
+
+.recordar {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--black-color);
+}
+
+}
+
+
+* {
+  margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/*estilos del header*/
+header {
+  background-image: url("../img/Cerveza\ Fondo.png");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: initial;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header.masthead {
+  padding-top: 0rem;
+  padding-bottom: 6rem;
+  text-align: center;
+  color: #fff;
+}
+
+/*estilos del botón*/
+
+#btn-inicio{
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--white-color);
+  background-color: var(--cafe-intermedio);
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: none;
+  margin-top: 8rem;
+  position: relative; 
+  z-index: 2; 
+}
+
+
+
+#btn-inicio:hover {
+    background-color: var(--amarillo-color);
+    color: var(--black-color);
+    transform: scale(1.05);
+}
+
+/*responsive el header*/
+
+
+@media (min-width: 768px) {
+  header.masthead {
+    padding-top: 17rem;
+    padding-bottom: 12.5rem;
+  }
+  header.masthead .masthead-subheading {
+    font-size: 2.25rem;
+    font-style: italic;
+    line-height: 2.25rem;
+    margin-bottom: 2rem;
+  }
+  header.masthead .masthead-heading {
+    font-size: 4.5rem;
+    font-weight: 700;
+    line-height: 4.5rem;
+    margin-bottom: 4rem;
+  }
+  
+}
+@media (max-width: 400px) {
+    header {
+        background-image: url("../img/Cerveza Fondo.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain; 
+        
+        width: 100%;
+        height: 500px; /* Alto fijo específico */
+        min-height: unset;
+        min-width: unset;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+
+        #btn-inicio{
+          display: inline-block;
+          padding: 10px 20px;
+          font-size: 5rem;
+          font-weight: 600;
+          color: var(--white-color);
+          background-color: var(--cafe-intermedio);
+          border-radius: 5px;
+          text-decoration: none;
+          transition: background-color 0.3s ease, color 0.3s ease;
+          border: none;
+          margin-top: 16rem;
+          position: relative; 
+          z-index: 2; 
+        }
+        
+}
+
+/*banner en movimiento*/
+
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--amarillo-color); 
+    color: var(--cafe-oscuro);
+    padding: 10px 0;
+    position: relative;
+  }
+
+  .marquee-text {
+    display: inline-block;
+    white-space: nowrap;
+    padding-left: 100%;
+    animation: scroll-left 15s linear infinite;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+/*estilos de la presentación del producto*/
+#resume-inicio{
+  background-color: var(--naranja);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--light-color);
+
+}
+
+#resume-beer-image{
+  margin: 0;
+}
+
+#btn-comprar-inicio{
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--white-color);
+    background-color: var(--cafe-oscuro);
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: none;
+}
+
+#btn-comprar-inicio:hover{
+  background-color: var(--cafe-intermedio);
+  transform: scale(1.05);
+}
+
+#resume-inicio-title{
+  background-color: var(--cafe-oscuro);
+  padding-left: 2rem;
+  padding-right: 2rem;
+  width: 100vw;
+}
+
+.text-justify {
+      text-align: justify;
+}
+
+#phrase-inicio{
+  background-color: var(--amarillo-color);
+}
+/*estilos del banner ingredientes*/
+
+
+
+#contenido-inicio {
+    padding: 2rem;
+    background-color: var(--black-color);
+}
+
+#banner-ingredientes-info {
+    background-color: var(--black-color);
+    padding: 1rem;
+    border-radius: 5px;
+    color: var(--white-color);
+}
+
+#banner-ingredientes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#banner-ingredientes-text {
+    font-size: 1rem;
+    margin: 10px 0;
+    color: var(--white-color);
+}
+
+#banner-ingredientes-items {
+    flex: 1 1 200px;
+    margin: 1rem;
+    text-align: center;
+    border: 2px solid var(--amarillo-color);
+}
+
+#banner-ingredientes-img {
+    width: 100px;
+    margin: 10px;
+}
+
+/*responsive banner ingredientes*/
+@media (max-width: 768px) {
+    #banner-ingredientes-items {
+        flex: 1 1 100px;
+        margin: 0.5rem;
+        background-color: var(--cafe-oscuro);
+
+    }
+    #banner-ingredientes-img {
+        width: 60px;
+
+    }
+    .banner-ingredientes-text {
+        font-size: 0.8rem;
+    }
+    #btn-inicio{
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--white-color);
+    background-color: var(--cafe-intermedio);
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: none;
+}
+}
+
+
+
+
+/*estilos del footer*/
+
+footer {
+    background-color: var(--cafe-oscuro);
+    color: var(--white-color);
+    padding: 1rem;
+    text-align: center;
+}
+footer .footer-logo {
+    height: 70px;
+    margin-bottom: 1rem
+}
+
+#btn-suscribirse {
+    background-color: #f2b035;
+    color: var(--cafe-oscuro);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: block;
+    margin: 10px auto 0 auto;
+    width: 200px;
+    max-width: 90%;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#btn-suscribirse:hover {
+    background-color: var(--cafe-intermedio);
+    color: var(--white-color);
+}
+
+
+/* Estilos para el footer iconos de redes sociales*/
+
+#down-content {
+    font-size: 1rem;
+    margin-top: 7rem;
+    color: var(--white-color);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+.footer-social-icons .social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin: 0 8px 8px 0;
+    border-radius: 50%;
+    background: var(--amarillo-color);
+    font-size: 22px;
+    transition: background 0.3s, color 0.3s;
+    text-decoration: none;
+
+    
+}
+.footer-social-icons .social-icon:hover {
+    background: var(--cafe-claro);
+}
+/* Estilos para el formulario de suscripción */
+
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--amarillo-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+  .navbar-nav .nav-link {
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+  }
+
+  .navbar-nav .nav-link:hover {
+    color: var(--cafe-intermedio);
+    border-bottom: 2px solid var(--cafe-claro);
+  }
+  /*Estilos para el footer mini menu*/
+  #footer-content-links a {
+    color: var(--white-color);
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+    
+  }
+
+  #footer-navbar {
+    background-color: var(--cafe-oscuro);
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    border-radius: none;
+    border-bottom: 4px solid var(--cafe-claro);
+  }
+
+  /* Estilos para el footer legal */
+  #footer-legal-container {
+    font-size: 0.9rem;
+    color: var(--cafe-oscuro);
+    background-color: var(--cafe-claro);
+    text-align: center;   
+    }
+  #footer-legal-container p {
+    margin: 0;  
+    padding: 10px 0;
+    font-size: 0.9rem;  
+    color: var(--cafe-oscuro);
+    font-weight: 600;
+    line-height: 1.5;
+    }
+    
+   #footer-legal-container img {
+    width: 50%; 
+    margin-left: 7rem;
+    }
+
+/* Estilos para el footer responsive */ 
+
+@media (max-width: 768px) {
+    #footer-legal-container img {
+    width: 48%; 
+    margin-left: 0;
+    }
+    #banner-ingredientes-img {
+        width: 60px;
+
+    }
+    .banner-ingredientes-text {
+        font-size: 0.8rem;
+    }
+    #footer-navbar {
+    background-color: var(--black-color);
+    padding: 1rem;
+    border-radius: 5px;
+    border-bottom: none;
+  }
+  #down-content {
+    font-size: 1rem;
+    margin-top: 1rem;
+    color: var(--white-color);
+    text-align: center;
+
+  }
+  #top-content {
+    font-size: 0.9rem;
+    padding-bottom: 1.5rem;
+    
+  }
+
+}
+
+
+

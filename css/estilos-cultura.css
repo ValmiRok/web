@@ -1,0 +1,235 @@
+/*valores preestablecidos*/
+:root {
+    --light-color: #f8f9fa;
+    --dark-color: #060606;
+    --black-color: #000000;
+    --white-color: #ffffff;
+    /*colores corporativos*/
+    --amarillo-color: #f2b035;
+    --cafe-intermedio: #8c593b;
+    --cafe-claro: #d9bdad;
+    --cafe-oscuro: #261d16;
+    --naranja: #f27f1b;    
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth; /*animacion para transionar de un contenido a otro*/
+    scroll-padding-top: 2rem;
+}
+/*estilos de header encabezado*/
+
+header {
+    background-color: var(--amarillo-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#culturizate-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#title-culturizate {
+    color: var(--cafe-oscuro);
+}
+
+/*estilos para el blog*/
+
+.blog-section {
+    background-color: var(--cafe-claro);
+}
+
+.btn.btn-primary {
+    background-color: var(--amarillo-color);
+    border-color: var(--amarillo-color);
+    color: var(--light-color);
+    padding: 0.5rem 1rem;
+    margin: 1rem;
+}
+
+.btn.btn-primary:hover {
+    background-color: #d99a1b; 
+    border-color: #d99a1b;
+    color: var(--light-color);
+}
+
+.card-body {
+    background-color: var(--cafe-oscuro);
+}
+.card-body h5,
+.card-body p {
+    color: var(--light-color);
+}
+.card-body h5 {
+    text-align: center;
+    font-weight: 700;
+    padding-bottom: 1rem;
+
+}
+
+/*estilos del footer*/
+
+footer {
+    background-color: var(--cafe-oscuro);
+    color: var(--white-color);
+    padding: 1rem;
+    text-align: center;
+}
+footer .footer-logo {
+    height: 70px;
+    margin-bottom: 1rem
+}
+
+#btn-suscribirse {
+    background-color: #f2b035;
+    color: var(--cafe-oscuro);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: block;
+    margin: 10px auto 0 auto;
+    width: 200px;
+    max-width: 90%;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#btn-suscribirse:hover {
+    background-color: var(--cafe-intermedio);
+    color: var(--white-color);
+}
+
+
+/* Estilos para el footer iconos de redes sociales*/
+
+#down-content {
+    font-size: 1rem;
+    margin-top: 7rem;
+    color: var(--white-color);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+.footer-social-icons .social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin: 0 8px 8px 0;
+    border-radius: 50%;
+    background: var(--amarillo-color);
+    font-size: 22px;
+    transition: background 0.3s, color 0.3s;
+    text-decoration: none;
+
+    
+}
+.footer-social-icons .social-icon:hover {
+    background: var(--cafe-claro);
+}
+/* Estilos para el formulario de suscripción */
+
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--amarillo-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+  .navbar-nav .nav-link {
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+  }
+
+  .navbar-nav .nav-link:hover {
+    color: var(--cafe-intermedio);
+    border-bottom: 2px solid var(--cafe-claro);
+  }
+  /*Estilos para el footer mini menu*/
+  #footer-content-links a {
+    color: var(--white-color);
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+    
+  }
+
+  #footer-navbar {
+    background-color: var(--cafe-oscuro);
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    border-radius: none;
+    border-bottom: 4px solid var(--cafe-claro);
+  }
+
+  /* Estilos para el footer legal */
+  #footer-legal-container {
+    font-size: 0.9rem;
+    color: var(--cafe-oscuro);
+    background-color: var(--cafe-claro);
+    text-align: center;   
+    }
+  #footer-legal-container p {
+    margin: 0;  
+    padding: 10px 0;
+    font-size: 0.9rem;  
+    color: var(--cafe-oscuro);
+    font-weight: 600;
+    line-height: 1.5;
+    }
+    
+   #footer-legal-container img {
+    width: 50%; 
+    margin-left: 7rem;
+    }
+
+/* Estilos para el footer responsive */ 
+
+@media (max-width: 768px) {
+    #footer-legal-container img {
+    width: 48%; 
+    margin-left: 0;
+    }
+    #banner-ingredientes-img {
+        width: 60px;
+
+    }
+    .banner-ingredientes-text {
+        font-size: 0.8rem;
+    }
+    #footer-navbar {
+    background-color: var(--black-color);
+    padding: 1rem;
+    border-radius: 5px;
+    border-bottom: none;
+  }
+  #down-content {
+    font-size: 1rem;
+    margin-top: 1rem;
+    color: var(--white-color);
+    text-align: center;
+
+  }
+  #top-content {
+    font-size: 0.9rem;
+    padding-bottom: 1.5rem;
+    
+  }
+
+}

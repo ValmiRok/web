@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Detalle del producto</title>
+  <link rel="stylesheet" href="css/estilos-mercha.css">
+  <link rel="stylesheet" href="menu.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+ 
+  <!-- Para producto1.html, producto2.html... -->
+<link rel="stylesheet" href="producto3.html">
+
+<!--icon del navegador-->
+    <link rel="icon" href="img/icoofficial.ico" type="image/x-icon">
+    
+</head>
+<body>
+    <!--menu de navegación-->
+    <nav class="navbar" role="navigation" aria-label="Menú principal">
+        <div class="navbar-logo">
+            <img src="img/logob.png" alt="Logo" />
+        </div>
+        <!--menu hamburguesa-->
+        <input type="checkbox" id="navbar-toggle" class="navbar-toggle">
+        <label for="navbar-toggle" class="navbar-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <div class="navbar-links">
+            <div class="dropdown">
+                <a href="index.html">Inicio</a>
+            </div>
+            <div class="dropdown">
+                <a href="somos.html">¿Quiénes somos?</a>
+                <ul class="submenu">
+                    <li><a href="somos.html">Historia</a></li>
+                    <li><a href="somos.html">Misión</a></li>
+                    <li><a href="somos.html">Visión</a></li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <a href="cervezas.html">Cervezas</a>
+                <ul class="submenu">
+                    <li><a href="mercha.html">Productos</a></li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <a href="culturizate.html">Culturizate</a>
+                <ul class="submenu">
+                    <li><a href="culturizate.html">Cultura cafetera</a></li>
+                    <li><a href="culturizate.html">Cultura cervecera</a></li>
+                </ul>
+            </div>
+            <a href="culturizate.html" class="contact-btn">Contáctanos</a>
+        </div>
+    </nav>
+  
+
+    
+  <header class="detalle-header">
+    <h1 id="titulo-productos">Tejo Bacatá</h1>
+  </header>
+
+  <a href="mercha.html" class="back-btn" id="btn-atras">← Volver al catálogo</a>
+
+  <section class="product-detail">
+    <div class="product-images">
+      <img src="img/tejo--.png" alt="Tejo Bacatá">
+    </div>
+    <div class="product-info">
+      <h2>Tejo Bacatá</h2>
+      <p class="descripcion">Un producto perfecto pasar tiempo con tus amigos y familiares/p>
+      <p class="precio">$85.000</p>
+      <div class="qty-control">
+        <button onclick="adjustQty(-1)">-</button>
+        <span id="qty">1</span>
+        <button onclick="adjustQty(1)">+</button>
+      </div>
+      <div class="actions">
+        <button onclick="addToCart()">Agregar al carrito</button>
+      </div>
+    </div>
+  </section>
+
+  <button class="btn-carrito" id="btnCarrito">🛒</button>
+  <div class="carrito-sidebar" id="carritoSidebar">
+    <div class="carrito-header">
+      <h2>Carrito</h2>
+      <button id="cerrarCarrito">✕</button>
+    </div>
+    <div class="carrito-contenido" id="carritoContenido"></div>
+    <div class="carrito-footer">
+      <p>Total: $<span id="totalCarrito">0</span></p>
+      <button id="vaciarCarrito">Vaciar</button>
+    </div>
+  </div>
+
+  <!-- JS de carrito y funcionalidad -->
+  <script>
+    let qty = 1;
+    const qtySpan = document.getElementById("qty");
+
+    function adjustQty(change) {
+      qty = Math.max(1, qty + change);
+      qtySpan.textContent = qty;
+    }
+
+    const carrito = [];
+    const carritoSidebar = document.getElementById("carritoSidebar");
+    const contenidoCarrito = document.getElementById("carritoContenido");
+    const totalCarrito = document.getElementById("totalCarrito");
+
+    document.getElementById("btnCarrito").addEventListener("click", () => {
+      carritoSidebar.classList.toggle("abierto");
+    });
+
+    document.getElementById("cerrarCarrito").addEventListener("click", () => {
+      carritoSidebar.classList.remove("abierto");
+    });
+
+    function addToCart() {
+      const producto = {
+        id: 1,
+        nombre: "Tejo Bacatá",
+        precio: 25000,
+        imagen: "img/tejo--.png",
+        cantidad: qty
+      };
+
+      const existente = carrito.find(p => p.id === producto.id);
+      if (existente) {
+        existente.cantidad = Math.min(existente.cantidad + qty, 10);
+      } else {
+        carrito.push(producto);
+      }
+      renderizarCarrito();
+      carritoSidebar.classList.add("abierto");
+    }
+
+    function renderizarCarrito() {
+      contenidoCarrito.innerHTML = "";
+      let total = 0;
+
+      carrito.forEach(item => {
+        const div = document.createElement("div");
+        div.className = "item-carrito";
+        div.innerHTML = `
+          <div class="info-producto">
+            <img src="${item.imagen}" alt="${item.nombre}">
+            <div>
+              <strong>${item.nombre}</strong><br>
+              <span>$${item.precio.toLocaleString()}</span>
+            </div>
+          </div>
+          <div class="contador">
+            <button onclick="modificarCantidad(${item.id}, -1)">−</button>
+            <span>${item.cantidad}</span>
+            <button onclick="modificarCantidad(${item.id}, 1)">+</button>
+          </div>`;
+        contenidoCarrito.appendChild(div);
+        total += item.precio * item.cantidad;
+      });
+
+      totalCarrito.innerText = total.toLocaleString();
+    }
+
+    function modificarCantidad(id, cambio) {
+      const item = carrito.find(p => p.id === id);
+      if (!item) return;
+      item.cantidad += cambio;
+      if (item.cantidad <= 0) {
+        const index = carrito.findIndex(p => p.id === id);
+        carrito.splice(index, 1);
+      } else if (item.cantidad > 10) {
+        item.cantidad = 10;
+      }
+      renderizarCarrito();
+    }
+
+    document.getElementById("vaciarCarrito").addEventListener("click", () => {
+      carrito.length = 0;
+      renderizarCarrito();
+    });
+  </script>
+</body>
+</html>

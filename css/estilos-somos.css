@@ -1,0 +1,138 @@
+/*valores preestablecidos*/
+:root {
+    --light-color: #f8f9fa;
+    --dark-color: #060606;
+    --black-color: #000000;
+    --white-color: #ffffff;
+    /*colores corporativos*/
+    --amarillo-color: #f2b035;
+    --cafe-intermedio: #8c593b;
+    --cafe-claro: #d9bdad;
+    --cafe-oscuro: #261d16;
+    --naranja: #f27f1b;    
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth; /*animacion para transionar de un contenido a otro*/
+    scroll-padding-top: 2rem;
+}
+
+
+
+body{
+    background: linear-gradient(to bottom, #d9bdad 40%, #f2b035 60%);
+}
+
+/*estilos de sección de objetivo general*/
+#resume-des {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#contenedor-des {
+    margin-top: 40px; 
+
+}
+
+.palabra-resaltada {
+  color: var(--cafe-intermedio);
+  font-weight: bold; 
+}
+
+/*estilos de sección de objetivo general*/
+.seccion-principal {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 20px; 
+  position: relative;
+  
+}
+.imagen-fondo {
+  object-fit: cover;
+
+}
+
+.contenedor-principal-todo {
+  padding: 2rem;
+  color: white;
+}
+
+.container-textos {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(3px);
+  border-radius: 10px;
+}
+
+.linea-decorativa {
+  border-color: #a34b2f;
+}
+
+.titulo-principal {
+  color: #fff8f1;
+}
+
+#parrafo-principal {
+  color: var(--white-color);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+
+@media (min-width: 350px) {
+   #imagen-fondo {
+    height: 300px;
+  }
+
+   #seccion-principal {
+    height: 300px;
+    padding: 1rem;
+  }
+
+   #container-textos {
+    padding: 2px;
+
+  }
+ 
+  #parrafo-principal {
+    font-size: 0.8rem;
+  }
+
+}
+
+
+
+/*estilos de objetivos especificos*/
+
+.contenedor-texto-obj {
+    background-color: var(--cafe-oscuro);
+  color: var(--white-color);
+  
+}
+
+@media (max-width: 768px) {
+
+    .contenedor-texto-obj {
+    background-color: transparent;
+  border-bottom: 2px solid var(--cafe-oscuro);
+  
+}
+
+.obj-min{
+  color: var(--cafe-oscuro);
+}
+#mis-vis{
+  padding-top: 2rem;
+
+}
+}
+
+
+
+
+

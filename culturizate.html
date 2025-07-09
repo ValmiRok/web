@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bacatá</title>
+    <link rel="shortcut icon" href="/ruta/a/tu/favicon.ico" type="image/x-icon">
+
+    <!--hojas de estilos-->
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="css/estilos-cultura.css">
+
+
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+    <!--Font Awesome Icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!--Boxicons-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!--icon del navegador-->
+    <link rel="icon" href="img/icoofficial.ico" type="image/x-icon">
+    
+</head>
+<body>
+    <!--menu de navegación-->
+    <nav class="navbar"  role="navigation" aria-label="Menú principal">
+        <div class="navbar-logo">
+            <img src="img/logob.png" alt="Logo" />
+        </div>
+        <!--menu hamburguesa-->
+        <input type="checkbox" id="navbar-toggle" class="navbar-toggle">
+        <label for="navbar-toggle" class="navbar-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <div class="navbar-links">
+            <div class="dropdown">
+                <a href="index.html">Inicio</a>
+            </div>
+            <div class="dropdown">
+                <a href="somos.html">¿Quiénes somos?</a>
+                <ul class="submenu">
+                    <li><a href="somos.html">Historia</a></li>
+                    <li><a href="somos.html">Misión</a></li>
+                    <li><a href="somos.html">Visión</a></li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <a href="cervezas.html">Cervezas</a>
+                <ul class="submenu">
+                    <li><a href="mercha.html">Productos</a></li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <a href="culturizate.html">Culturizate</a>
+                <ul class="submenu">
+                    <li><a href="culturizate.html">Cultura cafetera</a></li>
+                    <li><a href="culturizate.html">Cultura cervecera</a></li>
+                </ul>
+            </div>
+            <a href="contactanos.html" class="contact-btn">Contáctanos</a>
+        </div>
+    </nav>
+    <!--fin del menu de navegación-->
+    <!--header del blog-->
+    <header>
+        <div class="container">
+            <div class="col-12" id="culturizate-content">
+                <h1 class="text-uppercase text-center py-3 fw-bold" id="title-culturizate">Blogs Bacatá</h1>
+            </div>
+        </div>  
+    </header>
+    <!--blog-->
+    <section class="blog-section py-4">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Blog Primer Post -->
+                <div class="col-12 col-md-4 d-flex" id="card-blog">
+                    <div class="card h-100 shadow w-100">
+                        <div class="ratio ratio-4x3">
+                            <img src="img/blog/primer-plano-bayas-1.avif" class="card-img-top object-fit-cover" alt="Baya de granos de café" style="object-fit: cover;">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Cultura cafetera</h5>
+                            <p class="card-text">Descubre la historia y tradiciones que rodean el café colombiano, desde su cultivo hasta su importancia en la vida diaria.</p>
+                            <a href="#" class="btn btn-primary">Leer más</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Blog Segundo Post -->
+                <div class="col-12 col-md-4 d-flex">
+                    <div class="card h-100 shadow w-100">
+                        <div class="ratio ratio-4x3">
+                            <img src="img/blog/cerveza-espuma-2.jpg" class="card-img-top object-fit-cover" alt="Batender sirviendo cerveza" style="object-fit: cover;">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Cultura cervecera</h5>
+                            <p class="card-text">Explora el mundo de la cerveza artesanal, sus procesos de elaboración y el auge de la cultura cervecera en Colombia.</p>
+                            <a href="#" class="btn btn-primary">Leer más</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Blog Tercer Post -->
+                <div class="col-12 col-md-4 d-flex">
+                    <div class="card h-100 shadow w-100">
+                        <div class="ratio ratio-4x3">
+                            <img src="img/blog/cafe-express-3.avif" class="card-img-top object-fit-cover" alt="Taza de cafe con granos de fondo" style="object-fit: cover;">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Eventos y tradiciones</h5>
+                            <p class="card-text">Conoce los eventos, festivales y tradiciones que celebran la cultura cafetera y cervecera en nuestro país.</p>
+                            <a href="#" class="btn btn-primary">Leer más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog-section py-4">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Blog Cuarto Post -->
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 shadow">
+                        <img src="img/blog/barista-bebiendo-4.avif" class="card-img-top" alt="Bartender tomando cerveza">
+                        <div class="card-body">
+                            <h5 class="card-title">Barista cervecero</h5>
+                            <p class="card-text">Descubre la historia y tradiciones que rodean el café colombiano, desde su cultivo hasta su importancia en la vida diaria.</p>
+                            <a href="#" class="btn btn-primary">Leer más</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Blog Quinto Post -->
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 shadow">
+                        <img src="img/blog/proceso-cafe-5.avif" class="card-img-top" alt="Trituradora de café">
+                        <div class="card-body">
+                            <h5 class="card-title">Proceso del café</h5>
+                            <p class="card-text">Explora el mundo de la cerveza artesanal, sus procesos de elaboración y el auge de la cultura cervecera en Colombia.</p>
+                            <a href="#" class="btn btn-primary">Leer más</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Blog Sexto Post-->
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 shadow">
+                        <img src="img/blog/granos-cafe-6.avif" class="card-img-top" alt="Recogiendo granos de café con la mano">
+                        <div class="card-body">
+                            <h5 class="card-title">Cultivo de café</h5>
+                            <p class="card-text">Conoce los eventos, festivales y tradiciones que celebran la cultura cafetera y cervecera en nuestro país.</p>
+                            <a href="#" class="btn btn-primary">Leer más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    
+    <!--footer-->
+    
+
+    <footer>
+        <div class="container ">
+            <div class="row" >
+                <div class="col-12 col-md-4" id="footer-content-paco">
+                    <div class="footer-logo">
+                        <img src="img/logob.png" alt="Logo Bacatá" class="footer-logo">
+                    </div>
+                    <div class="footer-paco-description">
+                        <p>Suscribete a nuestro boletín cervecero y recibe noticias actualizadas.</p>
+                        <form action="#" method="post">
+                            <input type="email" name="email" placeholder="Ingresa tu correo electrónico" required >
+                            <button id="btn-suscribirse" type="submit">Suscribirse</button>
+                        </form>
+
+
+                    </div>
+                    
+                </div>
+                <div class="col-12 col-md-8" id="footer-content-links">
+                    <nav class="navbar navbar-expand-md justify-content-center py-3" id="footer-navbar">
+                        <ul class="navbar-nav text-center">
+                            <li class="nav-item mx-3">
+                            <a class="nav-link text-uppercase text-light" href="index.html">Inicio</a>
+                            </li>
+                            <li class="nav-item mx-3">
+                            <a class="nav-link text-uppercase text-light" href="somos.html">Quiénes Somos</a>
+                            </li>
+                            <li class="nav-item mx-3">
+                            <a class="nav-link text-uppercase text-light" href="cervezas.html">Cervezas</a>
+                            </li>
+                            <li class="nav-item mx-3">
+                            <a class="nav-link text-uppercase text-light" href="culturizate.html">Culturízate</a>
+                            </li>
+                        </ul>
+                        </nav>
+
+                    <h5 class="text-uppercase" id="down-content">Síguenos</h5>
+                    <div class="footer-social-icons">
+                        <a href="#" class="social-icon rounded-circle" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon rounded-circle" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon rounded-circle" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon rounded-circle" aria-label="youtube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <br>
+                    
+    </footer>
+        <div class="container-fluid" id="footer-legal-container">
+            <div class="row">
+                <div class="col-12 col-md-4 p-1 d-flex justify-content-center" id="footer-legal">
+                    <img src="img/icon/Consumo Responsable icon.png" alt="consumo responsable" class="img-fluid " id="footer-consumo-responsable">
+                </div>
+                <div class="col-12 col-md-8 p-1 text-center" id="footer-derechos">   
+                                <p id="top-content">&copy; 2025 Bacatá. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div> 
+
+    </div>
+
+    
+    
+    <script src="script.js"></script>                
+    <script>
+    // Mobile submenu toggle para pantallas pequeñas 
+    document.addEventListener('DOMContentLoaded', function() {
+        if(window.innerWidth <= 850) {
+            document.querySelectorAll('.dropdown > a').forEach(function(el) {
+                el.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    var parent = this.parentElement;
+                    parent.classList.toggle('active');
+                });
+            });
+        }
+    });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+</body>
+</html>

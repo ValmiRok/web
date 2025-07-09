@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bacatá</title>
+    <link rel="shortcut icon" href="/ruta/a/tu/favicon.ico" type="image/x-icon">
+
+    <!--hojas de estilos-->
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="css/estilos-mercha.css">
+
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+    <!--Font Awesome Icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!--icon del navegador-->
+    <link rel="icon" href="img/icoofficial.ico" type="image/x-icon">
+    
+</head>
+<body>
+    <!--menu de navegación-->
+    <nav class="navbar"  role="navigation" aria-label="Menú principal">
+        <div class="navbar-logo">
+            <img src="img/logob.png" alt="Logo" />
+        </div>
+        <!--menu hamburguesa-->
+        <input type="checkbox" id="navbar-toggle" class="navbar-toggle">
+        <label for="navbar-toggle" class="navbar-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <div class="navbar-links">
+            <div class="dropdown">
+                <a href="index.html">Inicio</a>
+            </div>
+            <div class="dropdown">
+                <a href="somos.html">¿Quiénes somos?</a>
+                <ul class="submenu">
+                    <li><a href="somos.html">Historia</a></li>
+                    <li><a href="somos.html">Misión</a></li>
+                    <li><a href="somos.html">Visión</a></li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <a href="cervezas.html">Cervezas</a>
+                <ul class="submenu">
+                    <li><a href="mercha.html">Productos</a></li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <a href="culturizate.html">Culturizate</a>
+                <ul class="submenu">
+                    <li><a href="culturizate.html">Cultura cafetera</a></li>
+                    <li><a href="culturizate.html">Cultura cervecera</a></li>
+                </ul>
+            </div>
+            <a href="#contacto.html" class="contact-btn">Contáctanos</a>
+        </div>
+    </nav>
+   
+   
+ 
+  <!-- Menú de navegación -->
+  <nav class="navbar"> <!-- Tu menú original aquí --> </nav>
+
+  <!-- Header -->
+  <header class="header-yellow">
+    <h1>Nuestros Productos</h1>
+  </header>
+
+  
+
+
+  <!-- Productos -->
+  <section class="productos-container">
+    <div class="producto">
+      <a href="producto1.html"><img src="img/camisa--.png" alt="Producto 1" /></a>
+      <h3>Camiseta Bacatá</h3>
+      <p>Diseño cómodo, tela suave y duradera.</p>
+      <p class="precio">$45.000</p>
+      <button onclick="agregarAlCarrito(0)">Agregar</button>
+    </div>
+    <div class="producto">
+      <a href="producto2.html"><img src="img/destapador--.png" alt="Producto 2" /></a>
+      <h3>Destapador Bacatá</h3>
+      <p>Un producto Esencial para ti </p>
+      <p class="precio">$25.000</p>
+      <button onclick="agregarAlCarrito(1)">Agregar</button>
+    </div>
+    <div class="producto">
+      <a href="producto3.html"><img src="img/tejo--.png" alt="Producto 3" /></a>
+      <h3>Tejo Bacatá</h3>
+      <p>Para que pases momentos agradables </p>
+      <p class="precio">$85.000</p>
+      <button onclick="agregarAlCarrito(2)">Agregar</button>
+    </div>
+    <div class="producto">
+      <a href="producto4.html"><img src="img/rana--.png" alt="Producto 4" /></a>
+      <h3>Rana Bacatá</h3>
+      <p>Resistente y con estilo único.</p>
+      <p class="precio">$100.000</p>
+      <button onclick="agregarAlCarrito(3)">Agregar</button>
+    </div>
+    <div class="producto">
+      <a href="producto5.html"><img src="img/vaso--.png" alt="Producto 5" /></a>
+      <h3>Vaso Bacatá</h3>
+      <p>Pequeño detalle, gran historia.</p>
+      <p class="precio">$25.000</p>
+      <button onclick="agregarAlCarrito(4)">Agregar</button>
+    </div>
+  </section>
+
+  <!-- Botón Carrito -->
+  <button id="btnCarrito" class="btn-carrito">🛒</button>
+
+  <!-- Sidebar del carrito -->
+  <div id="carritoSidebar" class="carrito-sidebar">
+    <div class="carrito-header">
+      <h2>Tu Carrito</h2>
+      <button id="cerrarCarrito">✕</button>
+    </div>
+    <div id="carritoContenido" class="carrito-contenido"></div>
+    <div class="carrito-footer">
+      <p>Total: $<span id="totalCarrito">0</span></p>
+      <button id="vaciarCarrito">Vaciar Carrito</button>
+    </div>
+  </div>
+
+  <script>
+    const productos = [
+  { nombre: 'Camiseta Bacatá', precio: 45000, imagen: 'img/camisa--.png' },
+  { nombre: 'Destapador Bacatá', precio: 25000, imagen: 'img/destapador--.png' },
+  { nombre: 'Tejo  Bacatá', precio: 25000, imagen: 'img/tejo--.png' },
+  { nombre: 'Rana Bacatá', precio: 85000, imagen: 'img/rana--.png' },
+  { nombre: 'Vaso Bacatá', precio: 25000, imagen: 'img/vaso--.png' }
+];
+
+    const carrito = [];
+    const btnCarrito = document.getElementById("btnCarrito");
+    const sidebar = document.getElementById("carritoSidebar");
+    const cerrar = document.getElementById("cerrarCarrito");
+    const vaciar = document.getElementById("vaciarCarrito");
+    const contenido = document.getElementById("carritoContenido");
+    const totalCarrito = document.getElementById("totalCarrito");
+
+    btnCarrito.onclick = () => sidebar.classList.toggle("abierto");
+    cerrar.onclick = () => sidebar.classList.remove("abierto");
+    vaciar.onclick = () => { carrito.length = 0; renderizarCarrito(); };
+
+    function agregarAlCarrito(index) {
+      const p = productos[index];
+      const existe = carrito.find(item => item.nombre === p.nombre);
+      if (existe) existe.cantidad += 1;
+      else carrito.push({ ...p, cantidad: 1 });
+      renderizarCarrito();
+      sidebar.classList.add("abierto");
+    }
+
+    function renderizarCarrito() {
+      contenido.innerHTML = "";
+      let total = 0;
+      carrito.forEach(p => {
+        const div = document.createElement("div");
+        div.className = "item-carrito";
+        div.innerHTML = `
+          <img src="${p.imagen}" alt="${p.nombre}" />
+          <div>
+            <strong>${p.nombre}</strong><br>
+            $${p.precio.toLocaleString()} x ${p.cantidad}
+          </div>
+        `;
+        total += p.precio * p.cantidad;
+        contenido.appendChild(div);
+      });
+      totalCarrito.textContent = total.toLocaleString();
+    }
+  </script>
+</body>
+</html>
+
+<!-- footer -->
+  <footer>
+        <div class="container">
+            <div class="row" >
+                <div class="col-12 col-md-4" id="footer-content-paco">
+                    <div class="footer-logo">
+                        <img src="img/logob.png" alt="Logo Bacatá" class="footer-logo">
+                    </div>
+                    <div class="footer-paco-description">
+                        <p>Suscribete a nuestro boletín cervecero y recibe noticias actualizadas.</p>
+                        <form action="#" method="post">
+                            <input type="email" name="email" placeholder="Ingresa tu correo electrónico" required >
+                            <button id="btn-suscribirse" type="submit">Suscribirse</button>
+                        </form>
+
+
+                    </div>
+                    
+                </div>
+                <div class="col-12 col-md-8" id="footer-content-links">
+                    <nav class="navbar navbar-expand-md justify-content-center py-3" id="footer-navbar">
+                        <ul class="navbar-nav text-center">
+                            <li class="nav-item mx-3">
+                            <a class="nav-link text-uppercase text-light" href="index.html">Inicio</a>
+                            </li>
+                            <li class="nav-item mx-3">
+                            <a class="nav-link text-uppercase text-light" href="somos.html">Quiénes Somos</a>
+                            </li>
+                            <li class="nav-item mx-3">
+                            <a class="nav-link text-uppercase text-light" href="cervezas.html">Cervezas</a>
+                            </li>
+                            <li class="nav-item mx-3">
+                            <a class="nav-link text-uppercase text-light" href="culturizate.html">Culturízate</a>
+                            </li>
+                        </ul>
+                        </nav>
+
+                    <h5 class="text-uppercase" id="down-content">Síguenos</h5>
+                    <div class="footer-social-icons">
+                        <a href="#" class="social-icon rounded-circle"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon rounded-circle"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon rounded-circle"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon rounded-circle"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <br>
+                    
+    </footer>
+        <div class="container-fluid" id="footer-legal-container">
+            <div class="row">
+                <div class="col-12 col-md-4 p-1 d-flex justify-content-center" id="footer-legal">
+                    <img src="img/icon/Consumo Responsable icon.png" alt="consumo responsable" class="img-fluid " id="footer-consumo-responsable">
+                </div>
+                <div class="col-12 col-md-8 p-1 text-center" id="footer-derechos">   
+                                <p id="top-content">&copy; 2025 Bacatá. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div> 
+
+    </div>

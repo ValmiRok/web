@@ -1,0 +1,356 @@
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.fondo {
+  background: url("../img/lomas.jpg") center/cover no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.formulario-contacto {
+  background-color: rgba(255, 255, 255, 0.85);
+  max-width: 500px;
+  margin: 60px auto;
+  padding: 40px;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.formulario-contacto h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 2px solid #3F1212;
+  background-color: #D9BEAC;
+  font-size: 16px;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.checkbox input {
+  margin-right: 10px;
+}
+
+button[type="submit"] {
+  background-color: #C4A484;
+  color: #3F1212;
+  border: none;
+  padding: 12px 30px;
+  font-size: 16px;
+  margin-top: 15px;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 6px;
+}
+
+.cerrar {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.faq {
+    background-color: #3e0f0f;
+    color: #fff;
+    padding: 40px 20px;
+    font-family: 'Arial', sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 10px;
+  }
+
+  .faq h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+
+  .pregunta {
+    margin-bottom: 20px;
+  }
+
+  .pregunta-titulo {
+    width: 100%;
+    background-color: #dbbca1;
+    color: #000;
+    padding: 12px;
+    border: none;
+    text-align: left;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .respuesta {
+    display: none;
+    background-color: #5a2b2b;
+    color: #fff;
+    padding: 15px;
+    border-radius: 0 0 8px 8px;
+    font-size: 15px;
+  }
+
+  .pregunta.activa .respuesta {
+    display: block;
+  }
+
+  .pregunta-titulo .flecha {
+    transition: transform 0.3s;
+  }
+
+  .pregunta.activa .flecha {
+    transform: rotate(180deg);
+  }
+
+  /* FOOTER */
+.footer {
+  background: #2a1206;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.footer-top p {
+  margin: 1rem 0;
+}
+
+.form-suscripcion input[type="email"] {
+  padding: 0.6rem;
+  border: none;
+  border-radius: 5px;
+  width: 60%;
+  max-width: 300px;
+}
+
+.form-suscripcion button {
+  padding: 0.6rem 1rem;
+  background-color: var(--amarillo);
+  border: none;
+  color: var(--cafe-oscuro);
+  font-weight: bold;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+
+.redes a {
+  margin: 0 10px;
+  color: var(--amarillo);
+  font-size: 1.5rem;
+  transition: transform 0.3s;
+}
+
+.redes a:hover {
+  transform: scale(1.2);
+  color: var(--blanco);
+}
+
+.footer-bottom p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+  .hero-text p {
+    font-size: 1rem;
+  }
+  .product-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+/*estilos del footer*/
+
+footer {
+    background-color: var(--cafe-oscuro);
+    color: var(--white-color);
+    padding: 1rem;
+    text-align: center;
+}
+footer .footer-logo {
+    height: 70px;
+    margin-bottom: 1rem
+}
+
+#btn-suscribirse {
+    background-color: #f2b035;
+    color: var(--cafe-oscuro);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: block;
+    margin: 10px auto 0 auto;
+    width: 200px;
+    max-width: 90%;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#btn-suscribirse:hover {
+    background-color: var(--cafe-intermedio);
+    color: var(--white-color);
+}
+
+
+/* Estilos para el footer iconos de redes sociales*/
+
+#down-content {
+    font-size: 1rem;
+    margin-top: 7rem;
+    color: var(--white-color);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+.footer-social-icons .social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin: 0 8px 8px 0;
+    border-radius: 50%;
+    background: var(--amarillo-color);
+    font-size: 22px;
+    transition: background 0.3s, color 0.3s;
+    text-decoration: none;
+
+    
+}
+.footer-social-icons .social-icon:hover {
+    background: var(--cafe-claro);
+}
+/* Estilos para el formulario de suscripción */
+
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+  .navbar-nav .nav-link {
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+  }
+
+  .navbar-nav .nav-link:hover {
+    color: var(--cafe-intermedio);
+    border-bottom: 2px solid var(--cafe-claro);
+  }
+  /*Estilos para el footer mini menu*/
+  #footer-content-links a {
+    color: var(--white-color);
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+    
+  }
+
+  #footer-navbar {
+    background-color: var(--cafe-oscuro);
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    border-radius: none;
+    border-bottom: 4px solid var(--cafe-claro);
+  }
+
+  /* Estilos para el footer legal */
+  #footer-legal-container {
+    font-size: 0.9rem;
+    color: var(--cafe-oscuro);
+    background-color: var(--cafe-claro);
+    text-align: center;   
+    }
+  #footer-legal-container p {
+    margin: 0;  
+    padding: 10px 0;
+    font-size: 0.9rem;  
+    color: var(--cafe-oscuro);
+    font-weight: 600;
+    line-height: 1.5;
+    }
+    
+   #footer-legal-container img {
+    width: 50%; 
+    margin-left: 7rem;
+    }
+
+/* Estilos para el footer responsive */ 
+
+@media (max-width: 768px) {
+    #footer-legal-container img {
+    width: 48%; 
+    margin-left: 0;
+    }
+    #banner-ingredientes-img {
+        width: 60px;
+
+    }
+    .banner-ingredientes-text {
+        font-size: 0.8rem;
+    }
+    #footer-navbar {
+    background-color: var(--black-color);
+    padding: 1rem;
+    border-radius: 5px;
+    border-bottom: none;
+  }
+  #down-content {
+    font-size: 1rem;
+    margin-top: 1rem;
+    color: var(--white-color);
+    text-align: center;
+
+  }
+  #top-content {
+    font-size: 0.9rem;
+    padding-bottom: 1.5rem;
+    
+  }
+
+}

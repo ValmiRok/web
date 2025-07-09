@@ -1,0 +1,447 @@
+:root {
+      --cafe-oscuro: #3e1f0d;
+      --cafe-claro: #8b5e3c;
+      --amarillo: #f2b035;
+      --blanco: #fff;
+      --gris: #eee;
+      --negro: #111;
+    --cafe-claro: #d9bdad;
+
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--cafe-oscuro);
+      color: var(--blanco);
+    }
+
+    .hero-section {
+     background: url("../img/paisajee.jpg") center/cover no-repeat;
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      text-align: center;
+    }
+
+    .hero-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-text h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      color: var(--amarillo);
+    }
+
+    .hero-text p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      color: var(--amarillo);;
+    }
+
+    .btn-hero {
+      padding: 0.8rem 1.8rem;
+      background: var(--amarillo);
+      color: var(--cafe-oscuro);
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .btn-hero:hover {
+      background: #fff;
+      color: var(--negro);
+    }
+
+    .productos-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 3rem 1rem;
+  background-color: #8b5e3c;
+  text-align: center;
+}
+
+.producto {
+  background: #3e1f0d;
+  padding: 1.5rem;
+  border-radius: 15px;
+  width: 260px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+  color: #fff;
+}
+
+    .producto img {
+      width: 100%;
+      max-height: 220px;
+      object-fit: contain;
+      margin-bottom: 1rem;
+    }
+
+    .producto h3, .producto .precio {
+      color: var(--amarillo);
+    }
+
+    .producto button {
+      margin-top: 1rem;
+      padding: 0.5rem 1.2rem;
+      background-color: var(--amarillo);
+      border: none;
+      border-radius: 30px;
+      color: var(--cafe-oscuro);
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .producto button:hover {
+      background: #fff;
+      color: #111;
+    }
+
+    .producto button.disabled {
+      background: #888;
+      color: #ccc;
+      cursor: not-allowed;
+    }
+
+/* --- BOTÓN CARRITO FLOTANTE --- */
+.btn-carrito {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #f2b035;
+  color: #d9bdad;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: background-color 0.3s, transform 0.3s;
+  z-index: 1000;
+}
+.btn-carrito:hover {
+  background-color: #fff;
+  transform: scale(1.1);
+}
+/* --- CARRITO SIDEBAR --- */
+.carrito-sidebar {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 320px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -4px 0 10px rgba(0,0,0,0.2);
+  transition: right 0.4s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+.carrito-sidebar.abierto {
+  right: 0;
+}
+.carrito-header {
+  background-color: #f2b035;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.carrito-contenido {
+  padding: 20px;
+  flex: 1;
+  overflow-y: auto;
+}
+.item-carrito {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+.item-carrito img {
+  width: 50px;
+  height: auto;
+  border-radius: 6px;
+  margin-right: 10px;
+}
+.item-carrito .contador {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.item-carrito .contador button {
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.carrito-footer {
+  padding: 20px;
+  border-top: 1px solid #ddd;
+  background-color: #f9f9f9;
+}
+.carrito-footer p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+#vaciarCarrito {
+  background-color: #8b5e3c;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+#vaciarCarrito:hover {
+  background-color: #f2b035;
+}
+
+
+
+
+
+
+/* FOOTER */
+.footer {
+  background: #2a1206;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.footer-top p {
+  margin: 1rem 0;
+}
+
+.form-suscripcion input[type="email"] {
+  padding: 0.6rem;
+  border: none;
+  border-radius: 5px;
+  width: 60%;
+  max-width: 300px;
+}
+
+.form-suscripcion button {
+  padding: 0.6rem 1rem;
+  background-color: var(--amarillo);
+  border: none;
+  color: var(--cafe-oscuro);
+  font-weight: bold;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+
+.redes a {
+  margin: 0 10px;
+  color: var(--amarillo);
+  font-size: 1.5rem;
+  transition: transform 0.3s;
+}
+
+.redes a:hover {
+  transform: scale(1.2);
+  color: var(--blanco);
+}
+
+.footer-bottom p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+  .hero-text p {
+    font-size: 1rem;
+  }
+  .product-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+/*estilos del footer*/
+
+footer {
+    background-color: var(--cafe-oscuro);
+    color: var(--white-color);
+    padding: 1rem;
+    text-align: center;
+}
+footer .footer-logo {
+    height: 70px;
+    margin-bottom: 1rem
+}
+
+#btn-suscribirse {
+    background-color: #f2b035;
+    color: var(--cafe-oscuro);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: block;
+    margin: 10px auto 0 auto;
+    width: 200px;
+    max-width: 90%;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#btn-suscribirse:hover {
+    background-color: var(--cafe-intermedio);
+    color: var(--white-color);
+}
+
+
+/* Estilos para el footer iconos de redes sociales*/
+
+#down-content {
+    font-size: 1rem;
+    margin-top: 7rem;
+    color: var(--white-color);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+.footer-social-icons .social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin: 0 8px 8px 0;
+    border-radius: 50%;
+    background: var(--amarillo-color);
+    font-size: 22px;
+    transition: background 0.3s, color 0.3s;
+    text-decoration: none;
+
+    
+}
+.footer-social-icons .social-icon:hover {
+    background: var(--cafe-claro);
+}
+/* Estilos para el formulario de suscripción */
+
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--amarillo-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+  .navbar-nav .nav-link {
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+  }
+
+  .navbar-nav .nav-link:hover {
+    color: var(--cafe-intermedio);
+    border-bottom: 2px solid var(--cafe-claro);
+  }
+  /*Estilos para el footer mini menu*/
+  #footer-content-links a {
+    color: var(--white-color);
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+    
+  }
+
+  #footer-navbar {
+    background-color: var(--cafe-oscuro);
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    border-radius: none;
+    border-bottom: 4px solid var(--cafe-claro);
+  }
+
+  /* Estilos para el footer legal */
+  #footer-legal-container {
+    font-size: 0.9rem;
+    color: var(--cafe-oscuro);
+    background-color: var(--cafe-claro);
+    text-align: center;   
+    }
+  #footer-legal-container p {
+    margin: 0;  
+    padding: 10px 0;
+    font-size: 0.9rem;  
+    color: var(--cafe-oscuro);
+    font-weight: 600;
+    line-height: 1.5;
+    }
+    
+   #footer-legal-container img {
+    width: 50%; 
+    margin-left: 7rem;
+    }
+
+/* Estilos para el footer responsive */ 
+
+@media (max-width: 768px) {
+    #footer-legal-container img {
+    width: 48%; 
+    margin-left: 0;
+    }
+    #banner-ingredientes-img {
+        width: 60px;
+
+    }
+    .banner-ingredientes-text {
+        font-size: 0.8rem;
+    }
+    #footer-navbar {
+    background-color: var(--black-color);
+    padding: 1rem;
+    border-radius: 5px;
+    border-bottom: none;
+  }
+  #down-content {
+    font-size: 1rem;
+    margin-top: 1rem;
+    color: var(--white-color);
+    text-align: center;
+
+  }
+  #top-content {
+    font-size: 0.9rem;
+    padding-bottom: 1.5rem;
+    
+  }
+
+}

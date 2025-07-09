@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bacatá</title>
+    <link rel="shortcut icon" href="/ruta/a/tu/favicon.ico" type="image/x-icon">
+
+    <!--hojas de estilos-->
+    <link rel="stylesheet" href="css/estilos-basicos.css">
+    <link rel="stylesheet" href="menu.css">
+
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+    <!--Font Awesome Icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!--icon del navegador-->
+    <link rel="icon" href="img/icoofficial.ico" type="image/x-icon">
+    
+<body>
+  <div id="preinicio">
+    <img src="img/logob.png" alt="Logo Bacatá" />
+    <div class="pregunta">¿ERES MAYOR DE EDAD?</div>
+    <div class="botones">
+      <button class="boton-si" onclick="entrar()">Sí</button>
+      <button class="boton-no" onclick="denegar()">No</button>
+    </div>
+    <label class="recordar">
+      <input type="checkbox" id="recordar" /> Recordar mis datos
+    </label>
+    <div class="mensaje-no" id="mensajeNo">
+      Lo sentimos, esta página es única y exclusivamente para mayores de edad.<br>Gracias por tu visita.
+    </div>
+  </div>
+
+  <script>
+  function entrar() {
+    if (document.getElementById("recordar").checked) {
+      localStorage.setItem("edadVerificada", "true");
+    }
+    document.getElementById("preinicio").style.display = "none";
+     document.getElementById("navbar").style.display = "flex"; 
+  }
+
+  function denegar() {
+    document.querySelector(".botones").style.display = "none";
+    document.querySelector(".recordar").style.display = "none";
+    document.getElementById("mensajeNo").style.display = "block";
+  }
+
+  // Ocultar preinicio si ya fue verificada la edad
+  window.addEventListener("DOMContentLoaded", () => {
+  if (localStorage.getItem("edadVerificada") === "true") {
+    document.getElementById("preinicio").style.display = "none";
+    document.getElementById("navbar").style.display = "flex"; // ← mostrar menú
+  }
+});
+</script>
+
+
+
+</head>
+<body>
+    <!--menu de navegación-->
+    <nav class="navbar" id="navbar"  role="navigation" aria-label="Menú principal">
+        <div class="navbar-logo">
+            <img src="img/logob.png" alt="Logo" />
+        </div>
+        <!--menu hamburguesa-->
+        <input type="checkbox" id="navbar-toggle" class="navbar-toggle">
+        <label for="navbar-toggle" cl role="navigation" aria-label="Menú principal"ass="navbar-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <div class="navbar-links">
+            <div class="dropdown">
+                <a href="index.html">Inicio</a>
+            </div>
+            <div class="dropdown">
+                <a href="somos.html">¿Quiénes somos?</a>
+                <ul class="submenu">
+                    <li><a href="somos.html">Historia</a></li>
+                    <li><a href="somos.html">Misión</a></li>
+                    <li><a href="somos.html">Visión</a></li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <a href="cervezas.html">Cervezas</a>
+                <ul class="submenu">
+                    <li><a href="mercha.html">Productos</a></li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <a href="culturizate.html">Culturizate</a>
+                <ul class="submenu">
+                    <li><a href="culturizate.html">Cultura cafetera</a></li>
+                    <li><a href="culturizate.html">Cultura cervecera</a></li>
+                </ul>
+            </div>
+            <a href="contactanos.html" class="contact-btn">Contáctanos</a>
+        </div>
+    </nav>
+    <!--fin del menu de navegación-->
+
+    <!--Contenido (Landing page)-->
+    <header class="masthead col-12 ">
+        <!--Imagen de inicio de la pagina y boton-->
+        <div class="container ">
+                <a id="btn-inicio" class="btn btn-primary btn-xl text-uppercase " href="#contenido-inicio">Conoce mas</a>
+        </div>
+    </header>
+    <!-- Banner en movimiento -->
+        <div class="marquee-container">
+        <div class="marquee-text">
+            ¡Disfruta el sabor intenso de nuestra cerveza de café artesanal! &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; 
+            Edición limitada disponible ahora. &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; 
+            Compra ya y vive la experiencia.
+        </div>
+        </div>
+     <!--Contenido (presentación del producto)-->
+     <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-md-6 px-4 " id="resume-inicio">
+                <h1 class="text-uppercase text-center fw-bold py-3 px-4 my-4" id="resume-inicio-title">Cerveza de Café</h1>
+                <div class="texto-container">
+                <h2 class=" text-uppercase px-4" id="subtitulo-container" style="color: #261d16;">Donde el carácter del café encuentra la pasión de la cerveza artesanal</h2>
+                <p class="px-4 text-align" style="text-align: justify;">Cerveza oscura de cuerpo sedoso y aroma envolvente, infusionada con café artesanal. Una receta audaz para los amantes del carácter y la profundidad.</p>
+                </div>
+                <button class="text-uppercase text-center my-4" id="btn-comprar-inicio">COMPRAR</button>
+            </div>
+            <div class="col-12 col-md-6 p-0">
+                <img class="img-fluid" id="resume-beer-image" src="img/beer-roja-y-vaso.png" alt="cerveza artesanal roja y vaso de cerveza">
+
+            </div>
+
+        </div>
+     </div>
+     <!--Contenido (collages de imagenes de la marca)-->
+    <div class="container-fluid  " id="phrase-inicio">
+        <div class="row align-items-center">
+            
+            <div class="col-12 col-md-4 mb-4 mb-md-0 d-flex justify-content-center">
+                <img src="img/edit-riendoamigosbeer.png" class="img-fluid rounded" alt="Cerveza bacatá grande y al lado amigos riendo">
+            </div>
+           
+            <div class="col-12 col-md-4 d-flex flex-column align-items-center justify-content-center mb-4 mb-md-0">
+                <img src="img/manos-cortadas-camarero.avif" class="img-fluid rounded mb-2" alt="Momentos inolvidables sirviendo una cerveza">
+                <h2 class="text-center text-white" id="phrase-collages">Creando momentos inolvidables</h2>
+            </div>
+            
+            <div class="col-12 col-md-4 d-flex justify-content-center my-0">
+                <img src="img/cerveza-brindis.png" class="img-fluid rounded" alt="Brindando amigos con cerveza y en el centro la cerveza bacatá grande">
+            </div>
+        </div>
+    </div>
+     
+     
+    <!--Contenido (banner de cerveza)-->
+     <div id="contenido-inicio">
+  <div class="container-fluid position-relative" id="banner-ingredientes-info" style="padding: 0;">
+
+    <img src="img/beer-banner.png" class="img-fluid w-100" alt="Imagen de tres vasos de cerveza">
+
+    <div class="position-absolute bottom-0 start-0 w-100" id="banner-ingredientes-container" >
+      <div class="row text-white text-center p-3">
+
+        <div class="col-12 col-md-4" id="banner-ingredientes-items">
+          <img src="img/icon/levadura-icon.png" alt="Levadura" class="img-fluid mb-2" id="banner-ingredientes-img">
+          <p class="banner-ingredientes-text m-0">Cerveza con pura malta y lúpulo</p>
+        </div>
+
+        <div class="col-12 col-md-4" id="banner-ingredientes-items">
+          <img src="img/icon/natural-icon.png" alt="Naturaleza" class="img-fluid mb-2" id="banner-ingredientes-img">
+          <p class="banner-ingredientes-text m-0">Ingredientes 100% naturales</p>
+        </div>
+
+        <div class="col-12 col-md-4" id="banner-ingredientes-items">
+          <img src="img/icon/cafe-icon.png" alt="Lúpulo" class="img-fluid mb-2" id="banner-ingredientes-img">
+          <p class="banner-ingredientes-text m-0">Café fresco de la región</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+    <!--fin del contenido (de todo la página)-->
+
+    <!--footer-->
+    
+
+    <footer>
+        <div class="container ">
+            <div class="row" >
+                <div class="col-12 col-md-4" id="footer-content-paco">
+                    <div class="footer-logo">
+                        <img src="img/logob.png" alt="Logo Bacatá" class="footer-logo">
+                    </div>
+                    <div class="footer-paco-description">
+                        <p>Suscribete a nuestro boletín cervecero y recibe noticias actualizadas.</p>
+                        <form action="#" method="post">
+                            <input type="email" name="email" placeholder="Ingresa tu correo electrónico" required >
+                            <button id="btn-suscribirse" type="submit">Suscribirse</button>
+                        </form>
+
+
+                    </div>
+                    
+                </div>
+                <div class="col-12 col-md-8" id="footer-content-links">
+                    <nav class="navbar navbar-expand-md justify-content-center py-3" id="footer-navbar">
+                        <ul class="navbar-nav text-center">
+                            <li class="nav-item mx-3">
+                            <a class="nav-link text-uppercase text-light" href="index.html">Inicio</a>
+                            </li>
+                            <li class="nav-item mx-3">
+                            <a class="nav-link text-uppercase text-light" href="somos.html">Quiénes Somos</a>
+                            </li>
+                            <li class="nav-item mx-3">
+                            <a class="nav-link text-uppercase text-light" href="cervezas.html">Cervezas</a>
+                            </li>
+                            <li class="nav-item mx-3">
+                            <a class="nav-link text-uppercase text-light" href="culturizate.html">Culturízate</a>
+                            </li>
+                        </ul>
+                        </nav>
+
+                    <h5 class="text-uppercase" id="down-content">Síguenos</h5>
+                    <div class="footer-social-icons">
+                        <a href="#" class="social-icon rounded-circle" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon rounded-circle" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon rounded-circle" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon rounded-circle" aria-label="youtube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <br>
+                    
+    </footer>
+        <div class="container-fluid" id="footer-legal-container">
+            <div class="row">
+                <div class="col-12 col-md-4 p-1 d-flex justify-content-center" id="footer-legal">
+                    <img src="img/icon/Consumo Responsable icon.png" alt="consumo responsable" class="img-fluid " id="footer-consumo-responsable">
+                </div>
+                <div class="col-12 col-md-8 p-1 text-center" id="footer-derechos">   
+                                <p id="top-content">&copy; 2025 Bacatá. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div> 
+
+    </div>
+
+    
+    
+    <script src="script.js"></script>                
+    <script>
+    // Mobile submenu toggle para pantallas pequeñas 
+    document.addEventListener('DOMContentLoaded', function() {
+        if(window.innerWidth <= 850) {
+            document.querySelectorAll('.dropdown > a').forEach(function(el) {
+                el.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    var parent = this.parentElement;
+                    parent.classList.toggle('active');
+                });
+            });
+        }
+    });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+
+  
+</body>
+</html>
